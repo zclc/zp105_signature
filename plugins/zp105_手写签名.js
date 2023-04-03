@@ -1,4 +1,4 @@
-function onInit({ exc, props, container, ctx }) {
+function init({ exc, props, container, ctx }) {
     exc('load("https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js")', {}, () => {
         const canvas = container.appendChild(document.createElement("canvas"))
         canvas.width = parseInt(getComputedStyle(container).width) || 300
@@ -21,7 +21,7 @@ $plugin({
         label: "onReady",
         ph: "$x"
     }],
-    onInit
+    init
 })
 
 /*
