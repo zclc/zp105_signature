@@ -5,7 +5,7 @@ function init({ exc, props, container, ctx }) {
         canvas.height = parseInt(getComputedStyle(container).height) || 150
         const $x = new SignaturePad(canvas, props.option)
         container.getSignature = () => { return $x }
-        if (props.onReady) exc(props.onReady, { ...ctx, $ext_ctx: ctx, $x }, () => exc("render()"))
+        if (props.ready) exc(props.ready, { ...ctx, $ext_ctx: ctx, $x }, () => exc("render()"))
     })
 }
 
@@ -16,7 +16,7 @@ $plugin({
         type: "json",
         label: "option"
     }, {
-        prop: "onReady",
+        prop: "ready",
         type: "exp",
         label: "onReady",
         ph: "$x"
