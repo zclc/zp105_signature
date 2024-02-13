@@ -5,7 +5,7 @@ module.exports = {
     mode: process.env.mode || "development",
     devtool: false,
     entry: {
-        "zp105": "./plugins/zp105_手写签名.js",
+        "zp105": "./src/zp105_手写签名.js",
     },
     output: {
         path: path.join(__dirname, "build/"),
