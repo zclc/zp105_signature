@@ -3,9 +3,9 @@ function init({ exc, props, container, ctx }) {
         const canvas = container.appendChild(document.createElement("canvas"))
         canvas.width = parseInt(getComputedStyle(container).width) || 300
         canvas.height = parseInt(getComputedStyle(container).height) || 150
-        const $x = new SignaturePad(canvas, props.option)
-        container.getSignature = () => { return $x }
-        if (props.ready) exc(props.ready, { ...ctx, $ext_ctx: ctx, $x }, () => exc("render()"))
+        const $val = new SignaturePad(canvas, props.option)
+        container.getSignature = () => { return $val }
+        if (props.ready) exc(props.ready, { ...ctx, $ext_ctx: ctx, $val }, () => exc("render()"))
     })
 }
 
@@ -19,7 +19,7 @@ $plugin({
         prop: "ready",
         type: "exp",
         label: "onReady",
-        ph: "$x"
+        ph: "$val"
     }],
     init
 })
