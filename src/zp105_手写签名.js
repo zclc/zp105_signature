@@ -1,5 +1,6 @@
 function init({ exc, props, container, ctx }) {
-    exc('load("https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js")', {}, () => {
+    // https://github.com/szimek/signature_pad
+    exc('load("https://z.zccdn.cn/vendor/signature_pad_5.0.2.js")', {}, () => {
         const canvas = container.appendChild(document.createElement("canvas"))
         canvas.width = parseInt(getComputedStyle(container).width) || 300
         canvas.height = parseInt(getComputedStyle(container).height) || 150
